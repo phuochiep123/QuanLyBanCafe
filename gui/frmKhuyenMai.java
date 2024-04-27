@@ -55,7 +55,7 @@ public class frmKhuyenMai extends JFrame {
 	 */
 	public frmKhuyenMai() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   
-		setBounds(0, 0, 1503, 789);
+		setBounds(0, 0, 1515, 790);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -63,18 +63,18 @@ public class frmKhuyenMai extends JFrame {
 		contentPane.setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(94, 10, 1418, 64);
+		panel.setBounds(10, 0, 1491, 74);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(10, 74, 1502, 681);
+		panel_1.setBounds(10, 74, 1479, 681);
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBorder(new TitledBorder(null, "Danh s\u00E1ch khuy\u1EBFn m\u00E3i", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_2.setBounds(10, 10, 805, 362);
+		panel_2.setBounds(10, 10, 805, 344);
 		panel_1.add(panel_2);
 		panel_2.setLayout(null);
 		
@@ -106,7 +106,7 @@ public class frmKhuyenMai extends JFrame {
 		panel_5.add(comboBox_2);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(10, 49, 785, 303);
+		scrollPane_1.setBounds(10, 49, 785, 285);
 		panel_2.add(scrollPane_1);
 		
 		table_1 = new JTable();
@@ -127,7 +127,7 @@ public class frmKhuyenMai extends JFrame {
 		
 		JPanel panel_3 = new JPanel();
 		panel_3.setBorder(new TitledBorder(null, "S\u1EA3n ph\u1EA9m \u00E1p d\u1EE5ng", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_3.setBounds(10, 382, 805, 278);
+		panel_3.setBounds(10, 353, 805, 307);
 		panel_1.add(panel_3);
 		panel_3.setLayout(null);
 		
@@ -163,7 +163,7 @@ public class frmKhuyenMai extends JFrame {
 		panel_4.add(chckbxNewCheckBox);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 76, 785, 192);
+		scrollPane.setBounds(10, 76, 785, 209);
 		panel_3.add(scrollPane);
 		
 		table = new JTable();
@@ -197,17 +197,12 @@ public class frmKhuyenMai extends JFrame {
 		
 		JButton btnThm = new JButton("Thêm");
 		btnThm.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		btnThm.setBounds(207, 509, 119, 39);
+		btnThm.setBounds(326, 509, 150, 47);
 		panel_6.add(btnThm);
-		
-		JButton btnXa = new JButton("Xóa");
-		btnXa.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		btnXa.setBounds(374, 509, 104, 39);
-		panel_6.add(btnXa);
 		
 		JButton btnNewButton = new JButton("Cập nhật");
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		btnNewButton.setBounds(50, 509, 114, 39);
+		btnNewButton.setBounds(122, 513, 138, 43);
 		panel_6.add(btnNewButton);
 		
 		JTextArea textArea = new JTextArea();

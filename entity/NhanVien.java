@@ -1,77 +1,121 @@
-package Entity;
-
+package entity;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class NhanVien {
 	private String maNhanVien;
 	private String hoTen;
-	private String sđt;
+	private boolean gioiTinh;
 	private LocalDateTime ngaySinh;
-	private double luong;
-	private DiaChi diaChi;
+	private String chucVu;
+	private LocalDateTime ngayTuyenDung;
+	private String diaChi;
+	private String email;
+	private String hinhAnh;
 	
+	private TaiKhoan taiKhoan;
+	
+	public NhanVien() {
+	}
+
+	public NhanVien(String maNhanVien) {
+		this.maNhanVien = maNhanVien;
+	}
+	
+	
+	
+	public NhanVien(String maNhanVien, String hoTen, boolean gioiTinh, LocalDateTime ngaySinh, String chucVu,
+			LocalDateTime ngayTuyenDung, String diaChi, String email, String hinhAnh) {
+		this.maNhanVien = maNhanVien;
+		this.hoTen = hoTen;
+		this.gioiTinh = gioiTinh;
+		this.ngaySinh = ngaySinh;
+		this.chucVu = chucVu;
+		this.ngayTuyenDung = ngayTuyenDung;
+		this.diaChi = diaChi;
+		this.email = email;
+		this.hinhAnh = hinhAnh;
+		this.taiKhoan = new TaiKhoan(maNhanVien, "1234", false);
+	}
+
 	public String getMaNhanVien() {
 		return maNhanVien;
 	}
+
 	public void setMaNhanVien(String maNhanVien) {
 		this.maNhanVien = maNhanVien;
 	}
+
 	public String getHoTen() {
 		return hoTen;
 	}
+
 	public void setHoTen(String hoTen) {
 		this.hoTen = hoTen;
 	}
-	public String getSđt() {
-		return sđt;
+
+	public boolean isGioiTinh() {
+		return gioiTinh;
 	}
-	public void setSđt(String sđt) {
-		this.sđt = sđt;
+
+	public void setGioiTinh(boolean gioiTinh) {
+		this.gioiTinh = gioiTinh;
 	}
+
 	public LocalDateTime getNgaySinh() {
 		return ngaySinh;
 	}
+
 	public void setNgaySinh(LocalDateTime ngaySinh) {
 		this.ngaySinh = ngaySinh;
 	}
-	public double getLuong() {
-		return luong;
+
+	public String getChucVu() {
+		return chucVu;
 	}
-	public void setLuong(double luong) {
-		this.luong = luong;
+
+	public void setChucVu(String chucVu) {
+		this.chucVu = chucVu;
 	}
-	public DiaChi getDiaChi() {
+
+	public LocalDateTime getNgayTuyenDung() {
+		return ngayTuyenDung;
+	}
+
+	public void setNgayTuyenDung(LocalDateTime ngayTuyenDung) {
+		this.ngayTuyenDung = ngayTuyenDung;
+	}
+
+	public String getDiaChi() {
 		return diaChi;
 	}
-	public void setDiaChi(DiaChi diaChi) {
-		this.diaChi = diaChi;
-	}	
-	
-	public NhanVien(String maNhanVien) {
-		super();
-		this.maNhanVien = maNhanVien;
-	}
-	public NhanVien(String maNhanVien, String hoTen, String sđt, LocalDateTime ngaySinh, double luong, DiaChi diaChi) {
-		super();
-		this.maNhanVien = maNhanVien;
-		this.hoTen = hoTen;
-		this.sđt = sđt;
-		this.ngaySinh = ngaySinh;
-		this.luong = luong;
+
+	public void setDiaChi(String diaChi) {
 		this.diaChi = diaChi;
 	}
-	public NhanVien() {
-		super();
-		// TODO Auto-generated constructor stub
+
+	public String getEmail() {
+		return email;
 	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getHinhAnh() {
+		return hinhAnh;
+	}
+
+	public void setHinhAnh(String hinhAnh) {
+		this.hinhAnh = hinhAnh;
+	}
+
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((maNhanVien == null) ? 0 : maNhanVien.hashCode());
-		return result;
+		return Objects.hash(maNhanVien);
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -81,17 +125,14 @@ public class NhanVien {
 		if (getClass() != obj.getClass())
 			return false;
 		NhanVien other = (NhanVien) obj;
-		if (maNhanVien == null) {
-			if (other.maNhanVien != null)
-				return false;
-		} else if (!maNhanVien.equals(other.maNhanVien))
-			return false;
-		return true;
+		return Objects.equals(maNhanVien, other.maNhanVien);
 	}
+
 	@Override
 	public String toString() {
-		return "NhanVien [maNhanVien=" + maNhanVien + ", hoTen=" + hoTen + ", sđt=" + sđt + ", ngaySinh=" + ngaySinh
-				+ ", luong=" + luong + "]";
+		return "NhanVien [maNhanVien=" + maNhanVien + ", hoTen=" + hoTen + ", gioiTinh=" + gioiTinh + ", ngaySinh="
+				+ ngaySinh + ", chucVu=" + chucVu + ", ngayTuyenDung=" + ngayTuyenDung + ", diaChi=" + diaChi
+				+ ", email=" + email + ", hinhAnh=" + hinhAnh + "]";
 	}
 	
 	

@@ -195,11 +195,11 @@ public class frmDangNhap extends javax.swing.JFrame {
 	}
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
-//    	frmDangNhap SignUpFrame = new frmDangNhap();
-//        SignUpFrame.setVisible(true);
-//        SignUpFrame.pack();
-//        SignUpFrame.setLocationRelativeTo(null); 
-//        this.dispose();
+    	frmDangNhap SignUpFrame = new frmDangNhap();
+        SignUpFrame.setVisible(true);
+        SignUpFrame.pack();
+        SignUpFrame.setLocationRelativeTo(null); 
+        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

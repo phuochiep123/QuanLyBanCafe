@@ -1,61 +1,78 @@
-package Entity;
+package entity;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Objects;
 
 public class KhachHang {
-	private String maKH;
+	private String maKhachHang;
 	private String hoTen;
-	private String dienThoai;
-	private int diemTichLuy;
-	public String getMaKH() {
-		return maKH;
+	private boolean gioiTinh;
+	private String DienThoai;
+	private LocalDateTime ngayThem;
+	private ArrayList<HoaDon> dsHoaDon;
+	
+	private int diemTichLuy; //Biến lưu giá trị thuộc tính dẫn xuất
+
+	public KhachHang(String maKhachHang, String hoTen, boolean gioiTinh, String dienThoai, ArrayList<HoaDon> dsHoaDon) {
+		this.maKhachHang = maKhachHang;
+		this.hoTen = hoTen;
+		this.gioiTinh = gioiTinh;
+		DienThoai = dienThoai;
+		this.ngayThem = LocalDateTime.now();
+		this.diemTichLuy = 0;
+		this.dsHoaDon = dsHoaDon;
 	}
-	public void setMaKH(String maKH) {
-		this.maKH = maKH;
+
+	public String getMaKhachHang() {
+		return maKhachHang;
 	}
+
+	public void setMaKhachHang(String maKhachHang) {
+		this.maKhachHang = maKhachHang;
+	}
+
 	public String getHoTen() {
 		return hoTen;
 	}
+
 	public void setHoTen(String hoTen) {
 		this.hoTen = hoTen;
 	}
+
+	public boolean isGioiTinh() {
+		return gioiTinh;
+	}
+
+	public void setGioiTinh(boolean gioiTinh) {
+		this.gioiTinh = gioiTinh;
+	}
+
 	public String getDienThoai() {
-		return dienThoai;
+		return DienThoai;
 	}
+
 	public void setDienThoai(String dienThoai) {
-		this.dienThoai = dienThoai;
+		DienThoai = dienThoai;
 	}
+
+	public LocalDateTime getNgayThem() {
+		return ngayThem;
+	}
+
+	public void setNgayThem(LocalDateTime ngayThem) {
+		this.ngayThem = ngayThem;
+	}
+
 	public int getDiemTichLuy() {
 		return diemTichLuy;
 	}
-	public void setDiemTichLuy(int diemTichLuy) {
-		this.diemTichLuy = diemTichLuy;
-	}
-	
-	public boolean thanhToan(HoaDon hoaDon) {
-		return hoaDon.isTrangThaiThanhToan() ? true : false;
-	}
-	
-	public KhachHang() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	public KhachHang(String maKH, String hoTen, String dienThoai, int diemTichLuy) {
-		super();
-		this.maKH = maKH;
-		this.hoTen = hoTen;
-		this.dienThoai = dienThoai;
-		this.diemTichLuy = diemTichLuy;
-	}
-	public KhachHang(String maKH) {
-		super();
-		this.maKH = maKH;
-	}
+
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((maKH == null) ? 0 : maKH.hashCode());
-		return result;
+		return Objects.hash(maKhachHang);
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -65,17 +82,14 @@ public class KhachHang {
 		if (getClass() != obj.getClass())
 			return false;
 		KhachHang other = (KhachHang) obj;
-		if (maKH == null) {
-			if (other.maKH != null)
-				return false;
-		} else if (!maKH.equals(other.maKH))
-			return false;
-		return true;
+		return Objects.equals(maKhachHang, other.maKhachHang);
 	}
+
 	@Override
 	public String toString() {
-		return "KhachHang [maKH=" + maKH + ", hoTen=" + hoTen + ", dienThoai=" + dienThoai + ", diemTichLuy="
-				+ diemTichLuy + "]";
+		return "KhachHang [maKhachHang=" + maKhachHang + ", hoTen=" + hoTen + ", gioiTinh=" + gioiTinh + ", DienThoai="
+				+ DienThoai + ", ngayThem=" + ngayThem + ", diemTichLuy=" + diemTichLuy + "]";
 	}
+
 	
 }

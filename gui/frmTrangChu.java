@@ -26,6 +26,7 @@ import java.awt.GridLayout;
 import java.awt.Image;
 
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 import javax.swing.JRadioButton;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
@@ -126,7 +127,7 @@ public class frmTrangChu extends JFrame {
         panel_9.add(btnThngK);
         
         JPanel pnlNoiDung = new JPanel();
-        pnlNoiDung.setBounds(10, 74, 1479, 681);
+        pnlNoiDung.setBounds(10, 58, 1479, 697);
         contentPane.add(pnlNoiDung);
         pnlNoiDung.setLayout(null);
         
@@ -137,20 +138,12 @@ public class frmTrangChu extends JFrame {
         panel_3.setLayout(null);
         
         JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-        tabbedPane.setBounds(10, 21, 714, 335);
+        tabbedPane.setBounds(10, 21, 707, 335);
         panel_3.add(tabbedPane);
         
-        JPanel panel_12 = new JPanel();
-        tabbedPane.addTab("Cafe", null, panel_12, null);
-        tabbedPane.setEnabledAt(0, true);
-        panel_12.setLayout(null);
-        
-        JLabel lblNewLabel_7 = new JLabel("cafe");
-        lblNewLabel_7.setBounds(216, 149, 45, 13);
-        panel_12.add(lblNewLabel_7);
-        
-        JPanel panel_13 = new JPanel();
-        tabbedPane.addTab("Bánh ngọt", null, panel_13, null);
+        JPanel pnlBanhNgot = new JPanel();
+        tabbedPane.addTab("Bánh ngọt", null, pnlBanhNgot, null);
+        pnlBanhNgot.setLayout(new GridLayout(5, 5, 0, 0));
         
         JPanel panel_14 = new JPanel();
         tabbedPane.addTab("Thức uống khác", null, panel_14, null);
@@ -159,6 +152,11 @@ public class frmTrangChu extends JFrame {
         JLabel lblNewLabel_8 = new JLabel("Thức uống khác");
         lblNewLabel_8.setBounds(184, 124, 164, 13);
         panel_14.add(lblNewLabel_8);
+        
+        JPanel panel_12 = new JPanel();
+        tabbedPane.addTab("Cafe", null, panel_12, null);
+        tabbedPane.setEnabledAt(2, true);
+        panel_12.setLayout(null);
         
         JPanel panel_4 = new JPanel();
         panel_4.setBorder(new TitledBorder(null, "Th\u00F4ng tin s\u1EA3n ph\u1EA9m \u0111\u01B0\u1EE3c ch\u1ECDn", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -305,7 +303,7 @@ public class frmTrangChu extends JFrame {
         lblNewLabel_4_1_1_1_2_4_1_1.setBounds(188, 97, 150, 23);
         pnlThanhToan.add(lblNewLabel_4_1_1_1_2_4_1_1);
         JComboBox cboThanhToan = new JComboBox();
-        cboThanhToan.setModel(new DefaultComboBoxModel(new String[] {"Tiền mặt", "Chuyển khoản"}));
+        cboThanhToan.setModel(new DefaultComboBoxModel(new String[] {"Chuyển khoản", "Tiền mặt"}));
         cboThanhToan.setBounds(170, 146, 150, 31);
         pnlThanhToan.add(cboThanhToan);
         
@@ -322,6 +320,7 @@ public class frmTrangChu extends JFrame {
         });
         pnlTienMat.setBounds(348, 21, 369, 131);
         pnlThanhToan.add(pnlTienMat);
+        pnlTienMat.setVisible(false);
         pnlTienMat.setLayout(null);
         
         JLabel lblNewLabel_4_1_1_1_2_5 = new JLabel("Tiền khách đưa:");
@@ -331,7 +330,7 @@ public class frmTrangChu extends JFrame {
         
         textField_2 = new JTextField();
         textField_2.setColumns(10);
-        textField_2.setBounds(124, 10, 190, 23);
+        textField_2.setBounds(124, 10, 88, 23);
         pnlTienMat.add(textField_2);
         
         JButton btnNewButton_4_1 = new JButton("30");
@@ -358,7 +357,7 @@ public class frmTrangChu extends JFrame {
         btnNewButton_4_1_4.setBounds(197, 66, 63, 21);
         pnlTienMat.add(btnNewButton_4_1_4);
         
-        JButton btnNewButton_4_1_5 = new JButton("30");
+        JButton btnNewButton_4_1_5 = new JButton("500");
         btnNewButton_4_1_5.setBounds(271, 66, 63, 21);
         pnlTienMat.add(btnNewButton_4_1_5);
         
@@ -371,6 +370,11 @@ public class frmTrangChu extends JFrame {
         textField_3.setColumns(10);
         textField_3.setBounds(124, 97, 190, 23);
         pnlTienMat.add(textField_3);
+        
+        JLabel lblNewLabel_7 = new JLabel("000 VNĐ");
+        lblNewLabel_7.setFont(new Font("Tahoma", Font.PLAIN, 15));
+        lblNewLabel_7.setBounds(217, 16, 74, 13);
+        pnlTienMat.add(lblNewLabel_7);
         
         JButton btnNewButton_6 = new JButton("THANH TOÁN");
         btnNewButton_6.setBackground(new Color(255, 255, 255));
@@ -502,7 +506,7 @@ public class frmTrangChu extends JFrame {
         
         JPanel pnlNav = new JPanel();
         pnlNav.setBackground(new Color(151,181,173,255));
-        pnlNav.setBounds(10, 0, 1491, 74);
+        pnlNav.setBounds(10, 0, 1491, 59);
         contentPane.add(pnlNav);
         pnlNav.setLayout(null);
         
@@ -535,7 +539,7 @@ public class frmTrangChu extends JFrame {
         
         jpnMenuIcon = new JPanel();
         jpnMenuIcon.setBorder(null);
-        jpnMenuIcon.setBounds(0, 0, 148, 74);
+        jpnMenuIcon.setBounds(0, 0, 148, 57);
         pnlNav.add(jpnMenuIcon);
         jpnMenuIcon.setBackground(new Color(151,181,173,255));
         jpnMenuIcon.setLayout(null);
@@ -595,4 +599,16 @@ public class frmTrangChu extends JFrame {
 			}
 		}).start();
 	}
+	 private JPanel addProduct(String name, String imagePath) {
+	        JPanel productPanel = new JPanel();
+	        productPanel.setLayout(new BorderLayout());
+
+	        JLabel productImage = new JLabel(new ImageIcon(imagePath)); 
+	        JLabel productName = new JLabel(name, SwingConstants.CENTER); 
+
+	        productPanel.add(productImage, BorderLayout.CENTER);
+	        productPanel.add(productName, BorderLayout.SOUTH);
+
+	        return productPanel;  
+	    }
 }

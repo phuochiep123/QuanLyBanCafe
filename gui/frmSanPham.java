@@ -5,9 +5,8 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import java.awt.Toolkit;
 
-public class frmThongKe extends JFrame {
+public class frmSanPham extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -19,7 +18,7 @@ public class frmThongKe extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					frmThongKe frame = new frmThongKe();
+					frmSanPham frame = new frmSanPham();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -31,22 +30,13 @@ public class frmThongKe extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public frmThongKe() {
+	public frmSanPham() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(0, 0, 1529, 789);
+		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
-		
-		JPanel panel = new JPanel();
-		panel.setBounds(10, 0, 1502, 64);
-		contentPane.add(panel);
-		panel.setLayout(null);
-		
-		JPanel pnlNoiDung = new JPanel();
-		pnlNoiDung.setBounds(10, 74, 1479, 681);
-		contentPane.add(pnlNoiDung);
 	}
+
 }

@@ -1,82 +1,100 @@
-package Entity;
+package entity;
 
-import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Objects;
 
 public class SanPham {
 	private String maSanPham;
 	private String tenSanPham;
-	private String kichThuoc;
+	private char kichThuoc;
 	private double gia;
-	private LoaiSanPham loaiSanPham;
-	private KhuyenMai khuyenMai;
-	public KhuyenMai getKhuyenMai() {
-		return khuyenMai;
-	}
-	public void setKhuyenMai(KhuyenMai khuyenMai) {
-		this.khuyenMai = khuyenMai;
-	}
-	public LoaiSanPham getLoaiSanPham() {
-		return loaiSanPham;
-	}
-	public void setLoaiSanPham(LoaiSanPham loaiSanPham) {
-		this.loaiSanPham = loaiSanPham;
-	}
-	public String getMaSanPham() {
-		return maSanPham;
-	}
-	public void setMaSanPham(String maSanPham) {
-		this.maSanPham = maSanPham;
-	}
-	public String getTenSanPham() {
-		return tenSanPham;
-	}
-	public void setTenSanPham(String tenSanPham) {
-		this.tenSanPham = tenSanPham;
-	}
-	public String getKichThuoc() {
-		return kichThuoc;
-	}
-	public void setKichThuoc(String kichThuoc) {
-		this.kichThuoc = kichThuoc;
-	}
-	public double getGia() {
-		return gia;
-	}
-	public void setGia(double gia) {
-		LocalDateTime df = LocalDateTime.now();
-		if(khuyenMai != null &&  khuyenMai.getNgayKetThuc().isBefore(df))
-			this.gia = gia - gia * khuyenMai.getPhanTramGiamGia();
-		else 
-			this.gia = gia;
-	}
+	private boolean trangThai;
+	private String hinhAnh;
+	private String moTa;
 	
-	
-	public SanPham() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	
-	public SanPham(String maSanPham) {
-		super();
-		this.maSanPham = maSanPham;
-	}
-	
-	public SanPham(String maSanPham, String tenSanPham, String kichThuoc, double gia, LoaiSanPham loaiSanPham,
-			KhuyenMai khuyenMai) {
+	private ArrayList<KhuyenMai> khuyenMai;
+
+	public SanPham(String maSanPham, String tenSanPham, char kichThuoc, double gia, boolean trangThai, String hinhAnh,
+			String moTa, ArrayList<KhuyenMai> khuyenMai) {
 		this.maSanPham = maSanPham;
 		this.tenSanPham = tenSanPham;
 		this.kichThuoc = kichThuoc;
 		this.gia = gia;
-		this.loaiSanPham = loaiSanPham;
+		this.trangThai = trangThai;
+		this.hinhAnh = hinhAnh;
+		this.moTa = moTa;
 		this.khuyenMai = khuyenMai;
 	}
+
+	public String getMaSanPham() {
+		return maSanPham;
+	}
+
+	public void setMaSanPham(String maSanPham) {
+		this.maSanPham = maSanPham;
+	}
+
+	public String getTenSanPham() {
+		return tenSanPham;
+	}
+
+	public void setTenSanPham(String tenSanPham) {
+		this.tenSanPham = tenSanPham;
+	}
+
+	public char getKichThuoc() {
+		return kichThuoc;
+	}
+
+	public void setKichThuoc(char kichThuoc) {
+		this.kichThuoc = kichThuoc;
+	}
+
+	public double getGia() {
+		return gia;
+	}
+
+	public void setGia(double gia) {
+		this.gia = gia;
+	}
+
+	public boolean isTrangThai() {
+		return trangThai;
+	}
+
+	public void setTrangThai(boolean trangThai) {
+		this.trangThai = trangThai;
+	}
+
+	public String getHinhAnh() {
+		return hinhAnh;
+	}
+
+	public void setHinhAnh(String hinhAnh) {
+		this.hinhAnh = hinhAnh;
+	}
+
+	public String getMoTa() {
+		return moTa;
+	}
+
+	public void setMoTa(String moTa) {
+		this.moTa = moTa;
+	}
+
+	public ArrayList<KhuyenMai> getKhuyenMai() {
+		return khuyenMai;
+	}
+
+	public void setKhuyenMai(ArrayList<KhuyenMai> khuyenMai) {
+		this.khuyenMai = khuyenMai;
+	}
+
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((maSanPham == null) ? 0 : maSanPham.hashCode());
-		return result;
+		return Objects.hash(maSanPham);
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -86,19 +104,15 @@ public class SanPham {
 		if (getClass() != obj.getClass())
 			return false;
 		SanPham other = (SanPham) obj;
-		if (maSanPham == null) {
-			if (other.maSanPham != null)
-				return false;
-		} else if (!maSanPham.equals(other.maSanPham))
-			return false;
-		return true;
+		return Objects.equals(maSanPham, other.maSanPham);
 	}
+
 	@Override
 	public String toString() {
-		//| Mã sản phẩm  |   Tên sản phẩm   | Kích thước |       Giá       |    Khuyến mãi    |    Chiết khấu     |   Số lượng    |     Tổng     |
-		return maSanPham + tenSanPham + kichThuoc + gia + khuyenMai.getPhanTramGiamGia();
+		return "SanPham [maSanPham=" + maSanPham + ", tenSanPham=" + tenSanPham + ", kichThuoc=" + kichThuoc + ", gia="
+				+ gia + ", trangThai=" + trangThai + ", hinhAnh=" + hinhAnh + ", moTa=" + moTa + ", khuyenMai="
+				+ khuyenMai + "]";
 	}
-	
 	
 	
 }

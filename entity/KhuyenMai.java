@@ -1,6 +1,7 @@
-package Entity;
+package entity;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class KhuyenMai {
 	private String maKhuyenMai;
@@ -9,80 +10,87 @@ public class KhuyenMai {
 	private LocalDateTime ngayBatDau;
 	private LocalDateTime ngayKetThuc;
 	private double phanTramGiamGia;
-	private String trangThai;
+	private boolean trangThai;  /** true: đang áp dung, false: ngừng áp dụng **/
+	
+	public KhuyenMai() {
+	}
+	
+	public KhuyenMai(String maKhuyenMai) {
+		this.maKhuyenMai = maKhuyenMai;
+	}
+
+	public KhuyenMai(String maKhuyenMai, String tenKhuyenMai, String moTa, LocalDateTime ngayBatDau,
+			LocalDateTime ngayKetThuc, double phanTramGiamGia, boolean trangThai) {
+		this.maKhuyenMai = maKhuyenMai;
+		this.tenKhuyenMai = tenKhuyenMai;
+		this.moTa = moTa;
+		this.ngayBatDau = ngayBatDau;
+		this.ngayKetThuc = ngayKetThuc;
+		this.phanTramGiamGia = phanTramGiamGia;
+		this.trangThai = trangThai;
+	}
+
 	public String getMaKhuyenMai() {
 		return maKhuyenMai;
 	}
+
 	public void setMaKhuyenMai(String maKhuyenMai) {
 		this.maKhuyenMai = maKhuyenMai;
 	}
+
 	public String getTenKhuyenMai() {
 		return tenKhuyenMai;
 	}
+
 	public void setTenKhuyenMai(String tenKhuyenMai) {
 		this.tenKhuyenMai = tenKhuyenMai;
 	}
+
 	public String getMoTa() {
 		return moTa;
 	}
+
 	public void setMoTa(String moTa) {
 		this.moTa = moTa;
 	}
+
 	public LocalDateTime getNgayBatDau() {
 		return ngayBatDau;
 	}
+
 	public void setNgayBatDau(LocalDateTime ngayBatDau) {
 		this.ngayBatDau = ngayBatDau;
 	}
+
 	public LocalDateTime getNgayKetThuc() {
 		return ngayKetThuc;
 	}
+
 	public void setNgayKetThuc(LocalDateTime ngayKetThuc) {
 		this.ngayKetThuc = ngayKetThuc;
 	}
+
 	public double getPhanTramGiamGia() {
 		return phanTramGiamGia;
 	}
+
 	public void setPhanTramGiamGia(double phanTramGiamGia) {
 		this.phanTramGiamGia = phanTramGiamGia;
 	}
-	public String getTrangThai() {
+
+	public boolean isTrangThai() {
 		return trangThai;
 	}
-	public void setTrangThai(String trangThai) {
+
+	public void setTrangThai(boolean trangThai) {
 		this.trangThai = trangThai;
 	}
-	
-	public void apDungKhuyenMai() {
-		
-	}
-	
-	public KhuyenMai() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	public KhuyenMai(String maKhuyenMai, String tenKhuyenMai, String moTa, LocalDateTime ngayBatDau,
-			LocalDateTime ngayKetThuc, double phanTramGiamGia, String trangThai) {
-		super();
-		this.maKhuyenMai = maKhuyenMai;
-		this.tenKhuyenMai = tenKhuyenMai;
-		this.moTa = moTa;
-		this.ngayBatDau = ngayBatDau;
-		this.ngayKetThuc = ngayKetThuc;
-		this.phanTramGiamGia = phanTramGiamGia;
-		this.trangThai = trangThai;
-	}
-	public KhuyenMai(String maKhuyenMai) {
-		super();
-		this.maKhuyenMai = maKhuyenMai;
-	}
+
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((maKhuyenMai == null) ? 0 : maKhuyenMai.hashCode());
-		return result;
+		return Objects.hash(maKhuyenMai);
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -92,18 +100,15 @@ public class KhuyenMai {
 		if (getClass() != obj.getClass())
 			return false;
 		KhuyenMai other = (KhuyenMai) obj;
-		if (maKhuyenMai == null) {
-			if (other.maKhuyenMai != null)
-				return false;
-		} else if (!maKhuyenMai.equals(other.maKhuyenMai))
-			return false;
-		return true;
+		return Objects.equals(maKhuyenMai, other.maKhuyenMai);
 	}
+
 	@Override
 	public String toString() {
 		return "KhuyenMai [maKhuyenMai=" + maKhuyenMai + ", tenKhuyenMai=" + tenKhuyenMai + ", moTa=" + moTa
 				+ ", ngayBatDau=" + ngayBatDau + ", ngayKetThuc=" + ngayKetThuc + ", phanTramGiamGia=" + phanTramGiamGia
 				+ ", trangThai=" + trangThai + "]";
 	}
+	
 	
 }
