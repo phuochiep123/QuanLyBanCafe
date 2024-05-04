@@ -227,11 +227,13 @@ public class frmDangNhap extends javax.swing.JFrame {
     public void checkPassword() {
     	String userchk = txtUserName.getText();
     	String passchk = pwdPass.getText();
+        
     	if(userchk.equals("") || passchk.equals("")) {
     		JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin!", "Cảnh báo!", JOptionPane.WARNING_MESSAGE);
     	}else {
     		try {
 				TaiKhoan tk = TaiKhoanDAO.getInstance().selectById(userchk);
+               
 				if(tk == null) {
 					JOptionPane.showMessageDialog(this, "Tài khoản không tồn tại trên hệ thống !", "Cảnh báo !", JOptionPane.WARNING_MESSAGE);
 				}else {

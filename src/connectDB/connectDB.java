@@ -25,6 +25,7 @@ public class connectDB {
             String pw = p.getProperty("Password");
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             String url = "jdbc:sqlserver://" + host + ":" + port + ";databaseName=" + dbname;
+            System.out.println(url+"\n"+user+"\n"+pw);
             con = DriverManager.getConnection(url, user, pw);
             System.out.println("Đã kết nối!");
         } catch (ClassNotFoundException e) {
