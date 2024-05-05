@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 
 import connectDB.connectDB;
@@ -73,8 +74,8 @@ public class CaLamDAO implements InterfaceDAO<CaLam> {
             while (rs.next()) {
                 String maCa = rs.getString("MaCa");
                 String tenCa = rs.getString("TenCa");
-                LocalDateTime thoiGianBatDau = rs.getObject("ThoiGianBatDau", LocalDateTime.class);
-                LocalDateTime thoiGianKetThuc = rs.getObject("ThoiGianKetThuc", LocalDateTime.class);
+                LocalTime thoiGianBatDau = rs.getObject("ThoiGianBatDau", LocalTime.class);
+                LocalTime thoiGianKetThuc = rs.getObject("ThoiGianKetThuc", LocalTime.class);
                 double luongTheoGio = rs.getDouble("LuongTheoGio");
                 
                 CaLam calam = new CaLam(maCa, tenCa, thoiGianBatDau, thoiGianKetThuc, luongTheoGio);
@@ -100,8 +101,8 @@ public class CaLamDAO implements InterfaceDAO<CaLam> {
             if (rs.next()) {
                 String maCa = rs.getString("MaCa");
                 String tenCa = rs.getString("TenCa");
-                LocalDateTime thoiGianBatDau = rs.getObject("ThoiGianBatDau", LocalDateTime.class);
-                LocalDateTime thoiGianKetThuc = rs.getObject("ThoiGianKetThuc", LocalDateTime.class);
+                LocalTime thoiGianBatDau = rs.getObject("ThoiGianBatDau", LocalTime.class);
+                LocalTime thoiGianKetThuc = rs.getObject("ThoiGianKetThuc", LocalTime.class);
                 double luongTheoGio = rs.getDouble("LuongTheoGio");
                 
                 calam = new CaLam(maCa, tenCa, thoiGianBatDau, thoiGianKetThuc, luongTheoGio);

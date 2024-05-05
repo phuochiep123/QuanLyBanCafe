@@ -22,7 +22,7 @@ public class KhachHangDAO implements InterfaceDAO<KhachHang> {
     public int insert(KhachHang khachHang) {
         int rowsAffected = 0;
         try (Connection connection = connectDB.getConnectDB()) {
-            String sql = "INSERT INTO KhachHang (MaKhachHang, HoTen, GioiTinh, DienThoai, NgayTuyenDung) VALUES (?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO KhachHang (MaKhachHang, HoTen, GioiTinh, DienThoai, NgayThem) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, khachHang.getMaKhachHang());
             preparedStatement.setString(2, khachHang.getHoTen());
@@ -42,7 +42,7 @@ public class KhachHangDAO implements InterfaceDAO<KhachHang> {
     public int update(KhachHang khachHang) {
         int rowsAffected = 0;
         try (Connection connection = connectDB.getConnectDB()) {
-            String sql = "UPDATE KhachHang SET HoTen = ?, GioiTinh = ?, DienThoai = ?, NgayTuyenDung = ? WHERE MaKhachHang = ?";
+            String sql = "UPDATE KhachHang SET HoTen = ?, GioiTinh = ?, DienThoai = ?, NgayThem = ? WHERE MaKhachHang = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, khachHang.getHoTen());
             preparedStatement.setBoolean(2, khachHang.isGioiTinh());

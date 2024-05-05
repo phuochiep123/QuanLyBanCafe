@@ -1,17 +1,18 @@
 package entity;
 
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Objects;
 
 public class CaLam {
 	private String maCa;
 	private String tenCa;
-	private LocalDateTime thoiGianBatDau;
-	private LocalDateTime thoiGianketThuc;
+	private LocalTime thoiGianBatDau;
+	private LocalTime thoiGianketThuc;
 	private double luongTheoGio;
 
-	public CaLam(String maCa, String tenCa, LocalDateTime thoiGianBatDau, LocalDateTime thoiGianketThuc,
+	public CaLam(String maCa, String tenCa, LocalTime thoiGianBatDau, LocalTime thoiGianketThuc,
 			double luongTheoGio) {
 		this.maCa = maCa;
 		this.tenCa = tenCa;
@@ -36,19 +37,19 @@ public class CaLam {
 		this.tenCa = tenCa;
 	}
 
-	public LocalDateTime getThoiGianBatDau() {
+	public LocalTime getThoiGianBatDau() {
 		return thoiGianBatDau;
 	}
 
-	public void setThoiGianBatDau(LocalDateTime thoiGianBatDau) {
+	public void setThoiGianBatDau(LocalTime thoiGianBatDau) {
 		this.thoiGianBatDau = thoiGianBatDau;
 	}
 
-	public LocalDateTime getThoiGianketThuc() {
+	public LocalTime getThoiGianketThuc() {
 		return thoiGianketThuc;
 	}
 
-	public void setThoiGianketThuc(LocalDateTime thoiGianketThuc) {
+	public void setThoiGianketThuc(LocalTime thoiGianketThuc) {
 		this.thoiGianketThuc = thoiGianketThuc;
 	}
 

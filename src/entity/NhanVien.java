@@ -8,7 +8,7 @@ public class NhanVien {
     private String maNhanVien;
     private TaiKhoan taiKhoan;
     private String hoTen;
-    private String gioiTinh;
+    private boolean gioiTinh;
     private String sdt;
     private LocalDate ngaySinh;
     private boolean chucVu; // true: quản lý, false: nhân viên thường
@@ -16,11 +16,11 @@ public class NhanVien {
     private String diaChi;
     private String khuVuc;
     private String email;
-    private String trangThai;
+    private boolean trangThai;
     private String hinhAnh;
 
-    public NhanVien(String maNhanVien, TaiKhoan taiKhoan, String hoTen, String gioiTinh, String sdt, LocalDate ngaySinh,
-            boolean chucVu, LocalDate ngayThem, String diaChi, String khuVuc, String email, String trangThai,
+    public NhanVien(String maNhanVien, TaiKhoan taiKhoan, String hoTen, boolean gioiTinh, String sdt, LocalDate ngaySinh,
+            boolean chucVu, LocalDate ngayThem, String diaChi, String khuVuc, String email, boolean trangThai,
             String hinhAnh) {
         this.maNhanVien = maNhanVien;
         this.taiKhoan = taiKhoan;
@@ -61,15 +61,17 @@ public class NhanVien {
         this.hoTen = hoTen;
     }
 
-    public String getGioiTinh() {
-        return gioiTinh;
-    }
+    
 
-    public void setGioiTinh(String gioiTinh) {
-        this.gioiTinh = gioiTinh;
-    }
+    public boolean isGioiTinh() {
+		return gioiTinh;
+	}
 
-    public String getSdt() {
+	public void setGioiTinh(boolean gioiTinh) {
+		this.gioiTinh = gioiTinh;
+	}
+
+	public String getSdt() {
         return sdt;
     }
 
@@ -125,15 +127,17 @@ public class NhanVien {
         this.email = email;
     }
 
-    public String getTrangThai() {
-        return trangThai;
-    }
 
-    public void setTrangThai(String trangThai) {
-        this.trangThai = trangThai;
-    }
 
-    public String getHinhAnh() {
+    public boolean isTrangThai() {
+		return trangThai;
+	}
+
+	public void setTrangThai(boolean trangThai) {
+		this.trangThai = trangThai;
+	}
+
+	public String getHinhAnh() {
         return hinhAnh;
     }
 

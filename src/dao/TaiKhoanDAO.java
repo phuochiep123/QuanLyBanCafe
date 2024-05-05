@@ -19,7 +19,7 @@ public class TaiKhoanDAO implements InterfaceDAO<TaiKhoan>{
 		int kq = 0;
 		try {
 			Connection conn = connectDB.getConnectDB();
-			String sql = "INSERT INTO TaiKhoan (MaTaiKhoan, NhanVien, TenTaiKhoan, MatKhau, LoaiTaiKhoan) VALUES (?,?,?,?,?)";
+			String sql = "INSERT INTO TaiKhoan (MaTaiKhoan, TenTaiKhoan, MatKhau, LoaiTaiKhoan) VALUES (?,?,?,?)";
 			PreparedStatement pst = conn.prepareStatement(sql);
 			pst.setString(1, t.getMaTaiKhoan());
 			pst.setString(2, t.getTenTaiKhoan());

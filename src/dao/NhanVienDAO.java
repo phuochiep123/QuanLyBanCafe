@@ -23,12 +23,12 @@ public class NhanVienDAO  implements InterfaceDAO<NhanVien>{
         int kq = 0;
         try {
             Connection conn = connectDB.getConnectDB();
-            String sql = "INSERT INTO NhanVien (MaNhanVien, MaTaiKhoan, HoTen, GioiTinh, Sdt, NgaySinh, ChucVu, NgayThem, DiaChi, KhuVuc, Email, TrangThai, HinhAnh) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO NhanVien (MaNhanVien, MaTaiKhoan, HoTen, GioiTinh, Sdt, NgaySinh, ChucVu, NgayTuyenDung, DiaChi, KhuVuc, Email, TrangThai, HinhAnh) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement pst = conn.prepareStatement(sql);
             pst.setString(1, nhanVien.getMaNhanVien());
             pst.setString(2, nhanVien.getTaiKhoan().getMaTaiKhoan());
             pst.setString(3, nhanVien.getHoTen());
-            pst.setString(4, nhanVien.getGioiTinh());
+            pst.setBoolean(4, nhanVien.isGioiTinh());
             pst.setString(5, nhanVien.getSdt());
             pst.setObject(6, nhanVien.getNgaySinh());
             pst.setBoolean(7, nhanVien.isChucVu());
@@ -36,7 +36,7 @@ public class NhanVienDAO  implements InterfaceDAO<NhanVien>{
             pst.setString(9, nhanVien.getDiaChi());
             pst.setString(10, nhanVien.getKhuVuc());
             pst.setString(11, nhanVien.getEmail());
-            pst.setString(12, nhanVien.getTrangThai());
+            pst.setBoolean(12, nhanVien.isTrangThai());
             pst.setString(13, nhanVien.getHinhAnh());
 
             kq = pst.executeUpdate();
@@ -53,11 +53,11 @@ public class NhanVienDAO  implements InterfaceDAO<NhanVien>{
         int kq = 0;
         try {
             Connection conn = connectDB.getConnectDB();
-            String sql = "UPDATE NhanVien SET MaTaiKhoan = ?, HoTen = ?, GioiTinh = ?, Sdt = ?, NgaySinh = ?, ChucVu = ?, NgayThem = ?, DiaChi = ?, KhuVuc = ?, Email = ?, TrangThai = ?, HinhAnh = ? WHERE MaNhanVien = ?";
+            String sql = "UPDATE NhanVien SET MaTaiKhoan = ?, HoTen = ?, GioiTinh = ?, Sdt = ?, NgaySinh = ?, ChucVu = ?, NgayTuyen = ?, DiaChi = ?, KhuVuc = ?, Email = ?, TrangThai = ?, HinhAnh = ? WHERE MaNhanVien = ?";
             PreparedStatement pst = conn.prepareStatement(sql);
             pst.setString(1, nhanVien.getTaiKhoan().getMaTaiKhoan());
             pst.setString(2, nhanVien.getHoTen());
-            pst.setString(3, nhanVien.getGioiTinh());
+            pst.setBoolean(3, nhanVien.isGioiTinh());
             pst.setString(4, nhanVien.getSdt());
             pst.setObject(5, nhanVien.getNgaySinh());
             pst.setBoolean(6, nhanVien.isChucVu());
@@ -65,7 +65,7 @@ public class NhanVienDAO  implements InterfaceDAO<NhanVien>{
             pst.setString(8, nhanVien.getDiaChi());
             pst.setString(9, nhanVien.getKhuVuc());
             pst.setString(10, nhanVien.getEmail());
-            pst.setString(11, nhanVien.getTrangThai());
+            pst.setBoolean(11, nhanVien.isTrangThai());
             pst.setString(12, nhanVien.getHinhAnh());
             pst.setString(13, nhanVien.getMaNhanVien());
 
@@ -90,7 +90,7 @@ public class NhanVienDAO  implements InterfaceDAO<NhanVien>{
                 String maNhanVien = rs.getString("MaNhanVien");
                 String maTaiKhoan = rs.getString("MaTaiKhoan");
                 String hoTen = rs.getString("HoTen");
-                String gioiTinh = rs.getString("GioiTinh");
+                Boolean gioiTinh = rs.getBoolean("GioiTinh");
                 String sdt = rs.getString("Sdt");
                 LocalDate ngaySinh = rs.getObject("NgaySinh", LocalDate.class);
                 boolean chucVu = rs.getBoolean("ChucVu");
@@ -98,7 +98,7 @@ public class NhanVienDAO  implements InterfaceDAO<NhanVien>{
                 String diaChi = rs.getString("DiaChi");
                 String khuVuc = rs.getString("KhuVuc");
                 String email = rs.getString("Email");
-                String trangThai = rs.getString("TrangThai");
+                Boolean trangThai = rs.getBoolean("TrangThai");
                 String hinhAnh = rs.getString("HinhAnh");
 
                 // Lấy thông tin tài khoản từ cơ sở dữ liệu
@@ -130,7 +130,7 @@ public class NhanVienDAO  implements InterfaceDAO<NhanVien>{
                 String maNhanVien = rs.getString("MaNhanVien");
                 String maTaiKhoan = rs.getString("MaTaiKhoan");
                 String hoTen = rs.getString("HoTen");
-                String gioiTinh = rs.getString("GioiTinh");
+                Boolean gioiTinh = rs.getBoolean("GioiTinh");
                 String sdt = rs.getString("Sdt");
                 LocalDate ngaySinh = rs.getObject("NgaySinh", LocalDate.class);
                 boolean chucVu = rs.getBoolean("ChucVu");
@@ -138,7 +138,7 @@ public class NhanVienDAO  implements InterfaceDAO<NhanVien>{
                 String diaChi = rs.getString("DiaChi");
                 String khuVuc = rs.getString("KhuVuc");
                 String email = rs.getString("Email");
-                String trangThai = rs.getString("TrangThai");
+                Boolean trangThai = rs.getBoolean("TrangThai");
                 String hinhAnh = rs.getString("HinhAnh");
 
                 // Lấy thông tin tài khoản từ cơ sở dữ liệu
