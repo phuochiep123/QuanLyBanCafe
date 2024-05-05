@@ -21,12 +21,12 @@ public class KhachHang {
 		this.maKhachHang = maKhachHang;
 	}
 
-	public KhachHang(String maKhachHang, String hoTen, boolean gioiTinh, String dienThoai) {
+	public KhachHang(String maKhachHang, String hoTen, boolean gioiTinh, String dienThoai,LocalDateTime ngayThem) {
 		this.maKhachHang = maKhachHang;
 		this.hoTen = hoTen;
 		this.gioiTinh = gioiTinh;
 		this.DienThoai = dienThoai;
-		this.ngayThem = LocalDateTime.now();
+		this.ngayThem = ngayThem;
 		this.diemTichLuy = 0;
 	}
 

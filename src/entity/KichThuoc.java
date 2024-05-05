@@ -1,8 +1,8 @@
 package entity;
 
 public enum KichThuoc {
-	SMALL,
-	MEDIUM,
-	LARGE,
-	DEFAULT // dùng cho sản phẩm bánh ngọt không có kích thước
+	S,
+	M,
+	L,
+	D// dùng cho sản phẩm bánh ngọt không có kích thước
 }

@@ -3,6 +3,7 @@ package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import connectDB.connectDB;
@@ -116,5 +117,19 @@ public class TaiKhoanDAO implements InterfaceDAO<TaiKhoan>{
 		}
 		return kq;
 	}
-
+	//xóa theo id
+	public int delete(String id) {
+	    int kq = 0;
+	    try {
+	        Connection conn = connectDB.getConnectDB();
+	        String sql = "DELETE FROM TaiKhoan WHERE MaTaiKhoan = ?";
+	        PreparedStatement pst = conn.prepareStatement(sql);
+	        pst.setString(1, id);
+	        kq = pst.executeUpdate();
+	        connectDB.closeConnection(conn);
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    }
+	    return kq;
+	}
 }

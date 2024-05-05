@@ -3,21 +3,21 @@ package entity;
 import java.util.Objects;
 
 public class Ban {
-	private int maBan;
+	private String maBan;
 	private int soGhe;
 	private boolean tinhTrang; // true: đang trống, false: đang bận
 	
-	public Ban(int maBan, int soGhe, boolean tinhTrang) {
+	public Ban(String maBan, int soGhe, boolean tinhTrang) {
 		this.maBan = maBan;
 		this.soGhe = soGhe;
 		this.tinhTrang = tinhTrang;
 	}
 
-	public int getMaBan() {
+	public String getMaBan() {
 		return maBan;
 	}
 
-	public void setMaBan(int maBan) {
+	public void setMaBan(String maBan) {
 		this.maBan = maBan;
 	}
 

@@ -17,16 +17,16 @@ public class SanPham {
 	private KhuyenMai khuyenMai;
 
 	public SanPham(String maSanPham, String tenSanPham, boolean trangThai, LoaiSanPham loaiSanPham, String hinhAnh,
-			String moTa, KhuyenMai khuyenMai) {
-		this.maSanPham = maSanPham;
-		this.tenSanPham = tenSanPham;
-		this.trangThai = trangThai;
-		this.loaiSanPham = loaiSanPham;
-		this.hinhAnh = hinhAnh;
-		this.moTa = moTa;
-		this.khuyenMai = khuyenMai;
-		this.kichThuocGia = new HashMap<>();
-	}
+            String moTa, KhuyenMai khuyenMai) {
+ this.maSanPham = maSanPham;
+ this.tenSanPham = tenSanPham;
+ this.trangThai = trangThai;
+ this.loaiSanPham = loaiSanPham;
+ this.hinhAnh = hinhAnh;
+ this.moTa = moTa;
+ this.khuyenMai = khuyenMai;
+ this.kichThuocGia = new HashMap<>();
+}
 
 	public String getMaSanPham() {
 		return maSanPham;
@@ -84,6 +84,11 @@ public class SanPham {
 	public double getGiaByKichThuoc(KichThuoc kichThuoc) {
 		return kichThuocGia.getOrDefault(kichThuoc, 0.0);
 	}
+	
+	public LoaiSanPham getLoaiSanPham() {
+		return loaiSanPham;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(maSanPham);

@@ -10,17 +10,18 @@ public class HoaDon {
 	private boolean trangThaiThanhToan;
 	private String ghiChu;
 	private PhuongThucThanhToan phuongThucThanhToan;
-	
+	private NhanVien nhanVien;
 	private KhachHang khachHang;
 	private Ban ban;
 	private ArrayList<ChiTietHoaDon> dsCTHD;
 
-	public HoaDon(String maHoaDon, LocalDateTime ngayTao, boolean trangThaiThanhToan, String ghiChu, Ban ban, PhuongThucThanhToan phuongThucThanhToan, KhachHang khachHang) {
+	public HoaDon(String maHoaDon,NhanVien nhanVien, LocalDateTime ngayTao, boolean trangThaiThanhToan, String ghiChu, Ban ban, PhuongThucThanhToan phuongThucThanhToan, KhachHang khachHang) {
 		this.maHoaDon = maHoaDon;
 		this.ngayTao = ngayTao;
 		this.trangThaiThanhToan = trangThaiThanhToan;
 		this.ghiChu = ghiChu;
 		this.ban = ban;
+		this.nhanVien= nhanVien;
 		this.khachHang = khachHang;
 		this.dsCTHD = new ArrayList<ChiTietHoaDon>();
 		this.phuongThucThanhToan = phuongThucThanhToan;
@@ -30,6 +31,21 @@ public class HoaDon {
 		return maHoaDon;
 	}
 
+	public PhuongThucThanhToan getPhuongThucThanhToan() {
+		return phuongThucThanhToan;
+	}
+	public void setPhuongThucThanhToan(PhuongThucThanhToan phuongThucThanhToan) {
+		this.phuongThucThanhToan = phuongThucThanhToan;
+	}
+	public NhanVien getNhanVien() {
+		return nhanVien;
+	}
+	public KhachHang getKhachHang() {
+		return khachHang;
+	}
+	public Ban getBan() {
+		return ban;
+	}
 	public void setMaHoaDon(String maHoaDon) {
 		this.maHoaDon = maHoaDon;
 	}

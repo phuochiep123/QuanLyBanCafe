@@ -33,9 +33,11 @@ public class ChiTietHoaDon {
 	public double tinhVAT() {
 		return 0;
 	}
+	
 	//get giá bán
 	public double giaBan() {
-		//Trừ khuyến mãi nêú có
+		
 		return 0;
 	}
+	//get thanh tien
 }
